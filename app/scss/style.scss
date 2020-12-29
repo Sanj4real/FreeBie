@@ -1,0 +1,1555 @@
+ /* fonts */
+ @font-face 
+ {
+     font-family: 'Poppins';
+     src: url('../fonts/Poppins.eot') format('embedded-opentype'),
+       url('../fonts/Poppins.woff') format('woff'), 
+       url('../fonts/Poppins.ttf')  format('truetype'),
+       url('../fonts/Poppins.svg#Poppins') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ @font-face 
+ {
+     font-family: 'Poppins-Regular';
+     src: url('../fonts/Poppins-Regular.eot') format('embedded-opentype'),
+       url('../fonts/Poppins-Regular.woff') format('woff'), 
+       url('../fonts/Poppins-Regular.ttf')  format('truetype'),
+       url('../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ @font-face 
+ {
+     font-family: 'Poppins-SemiBold';
+     src: url('../fonts/Poppins-SemiBold.eot') format('embedded-opentype'),
+       url('../fonts/Poppins-SemiBold.woff') format('woff'), 
+        url('../fonts/Poppins-SemiBold.ttf')  format('truetype'),
+        url('../fonts/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ 
+/******** LINE AWESOME ICON CSS ********/
+@font-face {
+    font-family: "Line Awesome Brands";
+    src: url("../fonts/line-awesome/la-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-brands-400.woff2") format("woff2"), url("../fonts/line-awesome/la-brands-400.woff") format("woff"), url("../fonts/line-awesome/la-brands-400.ttf") format("truetype"), url("../fonts/line-awesome/la-brands-400.svg#lineawesome") format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto; }
+  
+  @font-face {
+    font-family: "Line Awesome Free";
+    src: url("../fonts/line-awesome/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-solid-900.woff2") format("woff2"), url("../fonts/line-awesome/la-solid-900.woff") format("woff"), url("../fonts/line-awesome/la-solid-900.ttf") format("truetype"), url("../fonts/line-awesome/la-solid-900.svg#lineawesome") format("svg");
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto; }
+  
+  @font-face {
+    font-family: "Line Awesome Free";
+    src: url("../fonts/line-awesome/la-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/line-awesome/la-regular-400.woff2") format("woff2"), url("../fonts/line-awesome/la-regular-400.woff") format("woff"), url("../fonts/line-awesome/la-regular-400.ttf") format("truetype"), url("../fonts/line-awesome/la-regular-400.svg#lineawesome") format("svg");
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto; }
+
+$color-heading:#242f51;
+$color-paragraph: #616368;
+$color-charge:#999ca5;
+$color-hover:#2500f9;
+$color-feature-h3-first:#f55767;
+$color-feature-h3-mid: #2563ff;
+$color-feature-h3-last:#40975f;
+$color-header: #fcae61;
+$bg-feature-h3-first:#ffecef;
+$bg-feature-h3-mid:#f4f4ff;
+$bg-feature-h3-last:#e4ffee;
+$bg-whyfree-mid: #eaf9ff;
+$bg-whyfree-last: #fff6d3;
+$bg-whyfree-down-last: #fdeee4;
+$background-editor-img: #feaa25;
+$background-editor: #e2eaed;
+
+
+@mixin icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+@mixin figure {
+    figure
+    {
+        @include icon();
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        img
+        {
+            height: 45px;
+            width: 45px;
+        }
+    }
+}
+@mixin button {
+    a
+    {
+            background: $color-hover;
+            padding: 14.5px 40px;
+            color: #fff;
+            border-radius: 25px;
+            text-transform: capitalize;
+            font-size: .875rem;
+            font-family: 'Poppins-Regular';
+
+        /*  Ripple */
+        .ripple 
+        {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(0);
+            position: absolute;
+            opacity: 1;
+        }
+        .rippleEffect {
+        animation: rippleDrop .6s linear;
+        }
+
+        @keyframes rippleDrop {
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    }
+}
+body
+{
+    outline: none;
+    font-size: 16px;
+    font-weight: normal;
+    background: #fff;
+    color: $color-paragraph;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4
+{
+    font-family: 'Poppins-SemiBold';
+    color: $color-heading;
+    letter-spacing: .25px;
+}
+h1
+{
+    font-size: 50px;
+    line-height: 70px;
+}
+h2
+{
+    font-size: 36px;
+    line-height: 3rem;
+}
+h3
+{
+    font-size: 20px;
+    line-height: 3rem;
+}
+h4
+{
+    font-size: 16px;
+}
+p
+{
+    font-family: 'Poppins-Regular';
+    font-size: 16px;
+    color: $color-paragraph;
+    line-height: 1.875rem;
+    letter-spacing: .5px;
+}
+a{
+    color: $color-hover;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: .25px;
+    &:hover{
+        text-decoration: none;  
+        transition: .5s;
+    }
+}
+img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+// __________________________________________ Header-sec___________________________________________________________________
+    #main-header
+    {
+        height: auto;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        padding: 2.4rem 0;
+        .navbar
+        {
+            .navbar-brand
+            {
+                font-family: 'Poppins';
+                font-size: 30px;
+                color: $color-header !important;
+                text-transform: capitalize;
+                >span{
+                    color: $color-heading;
+                }
+            }
+            >.nav-link
+            {
+                margin-left: 2rem;
+                padding: 17px 25px;
+                border: 1px solid ;
+                background: $color-hover;
+                color: #fff;
+                border-radius: 40px;
+                font-size: 16px;
+                font-family: 'Poppins-Regular';
+                min-width: 8.24rem;
+                &:hover{
+                    border:1px solid $color-hover;
+                    color: $color-hover;
+                    background: transparent;
+                }
+            }
+            .collapse 
+            {
+                ul li
+                {
+                    padding: 4px 10px;
+                    a
+                    {
+                        position: relative;
+                        font-size: 16px;
+                        color: $color-heading !important;
+                        font-family: 'Poppins-Regular';
+                        &::after
+                        {
+                            content: "";
+                            position:absolute;
+                            bottom: 0;
+                            left: 0;
+                            background: $color-heading;
+                            height: 2px;
+                            width: 0;
+                            transition: .5s;
+                        }  
+                        &:hover::after{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+// _________________________________________________home-banner___________________________________________________________________
+    .home-banner
+    {
+        position: relative;
+        .container .row 
+        {
+            .banner-content
+            {
+                padding: 13rem 0.8rem 5rem 4.5rem;
+                ul
+                {
+                    padding: 0;
+                    background: $background-editor;
+                    border-radius: 17px;
+                    margin-right: 10rem;
+                    margin-bottom: 10px;
+                    li 
+                    {
+                        list-style: none;
+                        color: $color-heading;
+                        font-size: 16px;
+                        span img
+                        {
+                            background-color: $background-editor-img;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+                p
+                {
+                    margin: 0 0 40px ;
+                }
+                a
+                {
+                    padding: 14.5px 40px;
+                    background: $color-hover;
+                    color: #fff;
+                    border-radius: 25px;
+                    font-size: .875rem;
+                    font-family: 'Poppins-Regular';
+                    // min-width: 11.24rem;
+                    &:last-child
+                    {
+                        background: none;
+                        color: $color-heading;
+                        border: 2px solid $color-heading;
+                        text-transform: capitalize;
+                        padding: 14.5px 35px;
+                        margin-left: 0.875rem;
+                        &:hover{
+                            color: #fff;
+                            background-color: $color-heading;
+                        }
+                        i
+                        {
+                            font-size: 1.375rem;
+                            line-height: 0;
+                            position: relative;
+                            margin: 0 -0.0625rem 0 0;
+                            top: 0.1875rem;
+                            left: -0.4375rem;
+                        }
+                    }
+                }
+            }
+            figure 
+            {
+                margin: 0;
+                img{
+                    position: absolute;
+                    top: 5.3rem;
+                    left: 6.5rem;
+                }
+            }
+        }
+        .background-bg
+        {
+            background: url('../img/banner-bg.png') no-repeat;
+            position: absolute;
+            bottom: -3.7rem;
+            left: 0;
+            right:0;
+            height: 15rem;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+// _________________________________________________trusted-section_______________________________________________________________
+    .trusted-section
+    {
+        height: auto;
+        padding: 9rem 0px 4rem;
+        h4{
+            text-align: center;
+            line-height: 42px;
+        }
+        .trusted-content
+        {
+            @include flex();
+            margin: 3rem 65px 1.1rem;
+            .trusted-block
+            {
+                width: 19%;
+            }
+            img{
+                height: 50px;
+                width: 90px;
+            }
+        }
+    }
+// _______________________________________________featured-section___________________________________________________________________
+    .featured-section
+    {
+        padding: 4rem 0 5rem;
+        background: url('../img/bg-feature.png') no-repeat top 14.2rem left;
+        background-size: 47%;
+        .feature-div
+        {
+            position: relative;
+            .feature-img
+            {
+                position: absolute;
+                top: 2.678rem;
+                right: 5.978rem;
+            }
+        }
+        .feature-wrap
+        {
+            padding: 1.3125rem 0 0 2.5rem;
+            h2
+            {
+                margin: 0 85px 2.3125rem 0;
+            }
+            p
+            {
+                margin: 0 0 1.875rem;
+            }
+            .feature-block
+            {
+                margin-top: 50px;
+                .row:first-child .feature-img
+                {
+                    @include icon();
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-first;
+                    }
+                }
+                .row:nth-child(2) .feature-img
+                {
+                    @include icon();
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-mid;
+                    }
+                }
+                .row:last-child .feature-img
+                {
+                    @include icon();
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-last;
+                    }
+                }  
+                .row:first-child .feature-content
+                {
+                    margin: 0;
+                    padding: 0;
+                    h3
+                    {
+                        color: $color-feature-h3-first;
+                    }
+                    p
+                    {
+                        padding-right: 60px;
+                    }
+                }
+                .row:nth-child(2) .feature-content
+                {
+                    margin: 0;
+                    padding: 0;
+                    h3
+                    {
+                        color: $color-feature-h3-mid;
+                    }
+                    p
+                    {
+                        padding-right: 60px;
+                    }
+                }
+                .row:last-child .feature-content
+                {
+                    margin: 0;
+                    padding: 0;
+                    h3
+                    {
+                        color: $color-feature-h3-last;
+                    }
+                    p
+                    {
+                        padding-right: 60px
+                    }
+                }
+            }
+        }
+    }
+// ________________________________________________smart-section_________________________________________________________________
+    .smart-section
+    {
+        padding: 4rem 0 3rem;
+        .smart-block
+        {
+            display: flex;
+            align-items: center;            
+            &:first-child
+            {
+                border-right: 1px solid #000;
+            }
+            h2
+            {
+                text-transform: capitalize;
+                padding: 0px 54px;
+                margin: 0;
+            }
+            p
+            {
+                padding: 0 0 0 2.5rem;
+                margin: 0;
+            }
+        }
+        .smart-sec-block
+        {
+            margin: 6.5rem 65px 1.5rem;
+            @include flex();
+            .smart-content
+            {
+                width: 30%;
+                flex-wrap: wrap;
+                &:first-child
+                {
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-first;
+                    }
+                    h3
+                    {
+                        color: $color-feature-h3-first;
+                        margin: 23px 0 18px;
+                    }
+                }
+                &:nth-child(2)
+                {
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-mid;
+                    }
+                    h3
+                    {
+                        color: $color-feature-h3-mid;
+                        margin: 23px 0 18px;
+                    }
+                }
+                &:last-child
+                {
+                    h3
+                    {
+                        color: $color-feature-h3-last;
+                        margin: 23px 0 18px;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        background: $bg-feature-h3-last;
+                    }
+                }
+            }
+        }
+    }
+// ________________________________________________design-section________________________________________________________________
+    .design-sec
+    {
+        padding: 4rem 0 9.7rem;
+        background: url('../img/integration-bg.png') no-repeat top 0.2rem left;
+        background-size: 42%;
+        .design-img
+        {
+            position: relative;
+            span:nth-child(1) img
+            {
+                position: absolute;
+                top:6.6rem;
+                left: 21rem;
+            }
+            span:nth-child(2) img
+            {
+                position: absolute;
+                left: 13.624rem;
+                top: -2.2rem;
+            }
+            span:nth-child(3) img
+            {
+                position: absolute;
+                left: -4.5rem;
+                top: 3.5rem;
+            }
+            span:nth-child(4) img
+            {
+                position: absolute;
+                left: 14.46rem;
+                top: 8.68rem;
+            }
+            span:nth-child(5) img
+            {
+                position: absolute;
+                left: 7.8rem;
+                top: 1.1rem;
+            }
+            span:nth-child(6) img
+            {
+                position: absolute;
+                top: -1.75rem;
+                left: 1.11rem;  
+            }
+        }
+        .design-div
+        {
+            display: flex;
+            align-items: center;
+            .design-content
+            {
+                padding: 1.3125rem 0 0 2.5rem;
+                h2
+                {
+                    margin: 0 70px 2.3125rem 0;
+                }
+                p
+                {
+                    margin: 0 59px 1.875rem 0;
+                }
+                @include button();
+            }
+        }
+        
+    }
+//__________________________________________________________________________Why_section_________________________________________________
+    .whyFreebie-section
+    {
+        padding: 6.5rem 0 5rem;
+        border-top: 1.5px solid #e5e6e5;
+        text-align: center;
+        .container>h2
+        {
+            margin: 0 19rem 2.3125rem
+        }
+        .container>p
+        {
+            margin: 0 13rem 1.875rem;
+        }
+        .freebie-wrap
+        {
+            margin: 90px 65px 10px;
+            .freebie-block:first-child
+            {
+                @include flex();
+                .freebie-content:first-child
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        margin: 0 auto;
+                        background-color: $bg-feature-h3-first;
+                    }
+                }
+                .freebie-content:nth-child(2)
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        margin: 0 auto;
+                        background-color: $bg-whyfree-mid;
+                    }
+                }
+                .freebie-content:last-child
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        background-color: $bg-whyfree-last;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .freebie-block:last-child
+            {
+                margin-top: 60px;
+                @include flex();
+                .freebie-content:first-child
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        margin: 0 auto;
+                        background-color: $bg-feature-h3-last;
+                    }
+                }
+                .freebie-content:nth-child(2)
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        margin: 0 auto;
+                        background-color: $bg-feature-h3-mid;
+                    }
+                }
+                .freebie-content:last-child
+                {
+                    width: 28%;
+                    h3
+                    {
+                        margin: 12.5px 0 12.5px;
+                    }
+                    p
+                    {
+                        margin: 0 0 1.875rem;
+                    }
+                    @include figure();
+                    figure
+                    {
+                        margin: 0 auto;
+                        background: $bg-whyfree-down-last;
+                    }
+                }
+            }
+        }
+    }
+// ________________________________________________________________________ultimate-section________________________________________________
+    .ultimate-section
+    {
+        padding: 5rem 0 4rem;
+        background: url('../img/ecllipse.png') no-repeat top 6.8rem right;
+        background-size: 51%;
+        .col-sm-12
+        {
+            &:first-child
+            {
+               padding-left: 25px;
+               h2
+                {
+                    margin: 0 8.5rem 1.3125rem 0rem;
+                }
+                >p
+                {
+                    margin: 0 6.53rem 1.875rem 0;
+                }
+                .ultimate-wrap
+                {
+                    margin: 40px 0 0px;
+                    .ultimate-block:first-child
+                    {
+                        @include flex();
+                        .ultimate-content:first-child
+                        {
+                            width: 43%;
+                            h3
+                            {
+                                margin: 12.5px 0 12.5px;
+                            }
+                            p
+                            {
+                                margin: 0 0 1.875rem;
+                            }
+                            @include figure();
+                            figure
+                            {
+                                background-color: $bg-feature-h3-first;
+                            }
+                        }
+                        .ultimate-content:last-child
+                        {
+                            width: 43%;
+                            h3
+                            {
+                                margin: 12.5px 0 12.5px;
+                            }
+                            p
+                            {
+                                margin: 0 0 1.875rem;
+                            }
+                            @include figure();
+                            figure
+                            {
+                                background-color: $bg-feature-h3-last;
+                            }
+                        }
+                    }
+                    .ultimate-block:last-child
+                    {
+                        margin-top: 30px;
+                        @include flex();
+                        .ultimate-content:first-child
+                        {
+                            width: 43%;
+                            h3
+                            {
+                                margin: 12.5px 0 12.5px;
+                            }
+                            p
+                            {
+                                margin: 0 0 1.875rem;
+                            }
+                            @include figure();
+                            figure
+                            {
+                                background-color: $bg-whyfree-last;
+                            }
+                        }
+                        .ultimate-content:last-child
+                        {
+                            width: 43%;
+                            h3
+                            {
+                                margin: 12.5px 0 12.5px;
+                            }
+                            p
+                            {
+                                margin: 0 0 1.875rem;
+                            }
+                            @include figure();
+                            figure
+                            {
+                                background-color: $bg-feature-h3-mid;
+                            }
+                        }
+                    }
+                }
+                @include button();
+            }
+            &:last-child
+            {
+                .ultimate-device
+                {
+                    position: relative;
+                    z-index: 1;
+                    .mobile-screen-1
+                    {
+                        position: absolute;
+                        left: -0.325rem;
+                        top: 12.675rem;
+                    }
+                    .mobile-screen-2
+                    {
+                        position: absolute;
+                        top: 9.675rem;
+                        right: -4.325rem;
+                    }
+                }
+            }
+        }
+    }
+// ___________________________________________________awesome-feature__________________________________________________________________
+    .awesome-feature-section
+    {
+        padding: 6.5rem 0 5rem;
+        text-align: center;
+        border-bottom: 1.5px solid #e5e6e5;
+        h2
+        {
+            margin: 0 16rem 2.3125rem;
+        }
+        p  
+        {
+            margin: 0 13rem 1.875rem;
+        }
+        .switch-button
+        {
+            margin-top: 3.875rem;
+            >ul
+            {
+                display: flex;
+                text-align: center;
+                max-width: 18.6rem;
+                border: .0625rem solid #c5ccd2;
+                border-radius: 3.125rem;
+                padding: .25rem;
+                margin: 0px auto;
+                >li>a
+                {
+                    border-top-left-radius: .25rem;
+                    border-top-right-radius: .25rem;
+                    padding: 16px 40px;
+                    border: 1px solid #fff;
+                    border-radius: 24px;
+                    font-weight: 600;
+                    color: #a2afcd;
+                    font-size: 15px;
+                }
+                >li>.active
+                {
+                    border-color: #dee2e6 !important;
+                    background-color: $color-hover;
+                    color: #fff;
+                    font-weight: 600;
+                }
+            }
+
+            .tab-content
+            {   
+                margin-top: 2.876rem;
+                #monthly
+                {
+                    .col-6:first-child
+                    {
+                        .card
+                        {
+                            text-align: center;
+                            margin: 0 6.875rem;
+                            left: 85px;
+                            border: none;
+                            box-shadow: 4px 55px 62px 0px rgba(144, 163, 177, 0.18);
+                            &:hover
+                            {
+                                box-shadow: 4px 55px 62px 0px rgba(144, 163, 177, 0.18);
+                                cursor: pointer;
+                                transition: box-shadow 0.28s;
+                            }
+                            .card-header
+                            {
+                                background: linear-gradient(to top, #f4f7f9 0%,#fff 100%);
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        margin: 1rem 2rem;
+                                        color: $color-charge;
+                                        font-size: 16px;
+                                        font-family: 'Poppins-Regular';
+                                        span
+                                        {
+                                            font-size: 3rem;
+                                            font-family: 'Poppins-SemiBold';
+                                            font-weight: 600;
+                                            color: #3f3939;
+                                        }
+                                        b
+                                        {
+                                            font-family: 'Poppins-SemiBold';
+                                            color: $color-heading;
+                                            font-size: 17px;
+                                        }
+                                    }
+                                }
+                            }
+                            .card-body
+                            {
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        font-size: 14px;
+                                        color: $color-charge;
+                                        .btn
+                                        {
+                                            background-color: $color-hover;
+                                            color: #fff;
+                                            border-radius: 26px;
+                                            padding: 16px 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .col-6:last-child
+                    {
+                        .card
+                        {
+                            text-align: center;
+                            margin: 0 6.875rem;
+                            right: 85px;
+                            &:hover
+                            {
+                                box-shadow: 4px 55px 62px 0px rgba(144, 163, 177, 0.18);
+                                cursor: pointer;
+                                transition: box-shadow 0.28s;
+                            }
+                            .card-header
+                            {
+                                background: linear-gradient(to top, #f4f7f9 0%,#fff 100%);
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        color: $color-charge;
+                                        font-size: 16px;
+                                        span
+                                        {
+                                            font-size: 3rem;
+                                            font-family: 'Poppins-SemiBold';
+                                            font-weight: 600;
+                                            color: #3f3939;
+                                        }
+                                        b
+                                        {
+                                            font-family: 'Poppins-SemiBold';
+                                            color: $color-heading;
+                                            font-size: 17px;
+                                        }
+                                    }
+                                }
+                            }
+                            .card-body
+                            {
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        font-size: 14px;
+                                        color: $color-charge;
+                                        .btn
+                                        {
+                                            background-color: $color-hover;
+                                            color: #fff;
+                                            border-radius: 26px;
+                                            padding: 16px 40px;
+                                        }
+                                        .btn-link
+                                        {
+                                            font-family: 'Poppins-Regular';
+                                            color: $color-hover;
+                                            &:hover
+                                            {
+                                            text-decoration: underline;
+                                            transition: .28s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+                #annually
+                {
+                    .col-6:first-child
+                    {
+                        .card
+                        {
+                            text-align: center;
+                            margin: 0 6.875rem;
+                            left: 85px;
+                            &:hover
+                            {
+                                box-shadow: 4px 55px 62px 0px rgba(144, 163, 177, 0.18);
+                                cursor: pointer;
+                                transition: box-shadow 0.28s;
+                            }
+                            .card-header
+                            {
+                                background: linear-gradient(to top, #f4f7f9 0%,#fff 100%);
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        margin: 1rem 2rem;
+                                        color: $color-charge;
+                                        font-size: 16px;
+                                        font-family: 'Poppins-Regular';
+                                        span
+                                        {
+                                            font-size: 3rem;
+                                            font-family: 'Poppins-SemiBold';
+                                            font-weight: 600;
+                                            color: #3f3939;
+                                        }
+                                        b
+                                        {
+                                            font-family: 'Poppins-SemiBold';
+                                            color: $color-heading;
+                                            font-size: 17px;
+                                        }
+                                    }
+                                }
+                            }
+                            .card-body
+                            {
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        font-size: 14px;
+                                        color: $color-charge;
+                                        .btn
+                                        {
+                                            background-color: $color-hover;
+                                            color: #fff;
+                                            border-radius: 26px;
+                                            padding: 16px 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .col-6:last-child
+                    {
+                        .card
+                        {
+                            text-align: center;
+                            margin: 0 6.875rem;
+                            border: none;
+                            right: 85px;
+                            box-shadow: 4px 55px 62px 0px rgba(144, 163, 177, 0.18);
+                            &:hover
+                            {
+                                cursor: pointer;
+                                transition: box-shadow 0.28s;
+                            }
+                            .card-header
+                            {
+                                background: linear-gradient(to top, #f4f7f9 0%,#fff 100%);
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        color: $color-charge;
+                                        font-size: 16px;
+                                        span
+                                        {
+                                            font-size: 3rem;
+                                            font-family: 'Poppins-SemiBold';
+                                            font-weight: 600;
+                                            color: #3f3939;
+                                        }
+                                        b
+                                        {
+                                            font-family: 'Poppins-SemiBold';
+                                            color: $color-heading;
+                                            font-size: 17px;
+                                        }
+                                    }
+                                }
+                            }
+                            .card-body
+                            {
+                                ul
+                                {
+                                    padding: 0;
+                                    margin: 0;
+                                    li
+                                    {
+                                        list-style-type: none;
+                                        font-family: 'Poppins-Regular';
+                                        margin: 1rem 2rem;
+                                        font-size: 14px;
+                                        color: $color-charge;
+                                        .btn
+                                        {
+                                            background-color: $color-hover;
+                                            color: #fff;
+                                            border-radius: 26px;
+                                            padding: 16px 40px;
+                                        }
+                                        .btn-link
+                                        {
+                                            font-family: 'Poppins-Regular';
+                                            color: $color-hover;
+                                            &:hover
+                                            {
+                                            text-decoration: underline;
+                                            transition: .28s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+// _____________________________________________________________testimonial-section__________________________________________
+    .testimonial-section
+    {
+        padding: 6.5rem 0 5rem;
+        background: url('../img/map.png') no-repeat top 13.9rem left;
+        background-size: 56%;
+        .col-6
+        {
+            &:first-child
+            {
+                position: relative;
+                span:nth-child(1) img
+                {
+                    position: absolute;
+                    top: 17rem;
+                    left: 8.9rem;
+                }
+                span:nth-child(2) img
+                {
+                    position: absolute;
+                    left: -4.8rem;
+                    top: 12rem;
+                }
+                span:nth-child(3) img
+                {
+                    position: absolute;
+                    left: 7.5rem;
+                    top: 28rem;
+                }
+                span:nth-child(4) img
+                {
+                    position: absolute;
+                    left: 28.5rem;
+                    top: 8.9rem;
+                }
+                span:nth-child(5) img
+                {
+                    position: absolute;
+                    right: 9.3rem;
+                    top: 22.1rem;
+                }
+                span:nth-child(6) img
+                {
+                    position: absolute;
+                    top: 19.9rem;
+                    left: -3.2rem;
+                }
+            }
+            &:last-child
+            {
+                .testimonial-wrap
+                {
+                    padding: 1.3125rem 0 0 2.5rem;
+                    h2
+                    {
+                        margin: 0 2.5rem 1.3125rem 0rem;
+                    }
+                    >p
+                    {
+                        margin: 0 1.53rem 2.975rem 0;
+                    }
+                    .testimonial-content
+                    {
+                        .owl-wrapper-outer
+                        {
+                            position: relative;
+                            .user-review
+                            {
+                                .checked
+                                {
+                                    color: orange;
+                                }
+                                >h3
+                                {
+                                    margin: .5rem 0 0.875rem
+                                }
+                                >p
+                                {
+                                    margin: 1rem 0 1.5rem; 
+                                    text-align: justify;
+                                }
+                                .user-info
+                                {
+                                    display: flex;
+                                    align-items: center;
+                                    figure
+                                    {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width:60px;
+                                        height: 60px;
+                                        margin: 0;
+                                        padding: 0;
+                                        overflow: hidden;
+                                        border-radius: 50%;
+                                        img
+                                        {
+                                            height: 57px;
+                                            width: 87px;
+                                            margin-right: 41px;
+                                            margin-top: 13px;
+                                            transform: scale(2);
+                                            transition: .3s ease-in-out;
+                                        }
+                                    }
+                                    .user-id
+                                    {
+                                        margin-left: 2rem;
+                                        h3
+                                        {
+                                            margin: 0;
+                                            font-size: 16px;
+                                            line-height: 2.1rem;
+                                        }
+                                        p
+                                        {
+                                            margin: 0;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .owl-controls
+                        {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            margin: 0;
+                            .owl-pagination
+                            {
+                                display: none !important;
+                            }
+                            .owl-buttons
+                            {
+                                div:first-child
+                                {
+                                    padding: 5px;
+                                    background-color: #fff;
+                                    height: 48px;
+                                    width: 48px;
+                                    border: 1px solid #eff3f8
+                                }
+                                div:last-child
+                                {
+                                    padding: 5px;
+                                    height: 48px;
+                                    width: 48px;
+                                    background-color: #eff3f8;
+                                }
+                            }
+                        }
+                        .owl-prev::before
+                        {
+                            content: '\f105';
+                            color: $color-hover;
+                            font-family: "Line Awesome Free";
+                            font-weight: 900;
+                            font-size: 1.5rem;
+                            &:hover
+                            {
+                                color: red;
+                            }
+                        }
+                        .owl-next::before
+                        {
+                            content: '\f104';
+                            color: $color-hover;
+                            font-family: "Line Awesome Free";
+                            font-weight: 900;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+// _______________________________________________________________FAQ-section___________________________________________
+    .frequently-section
+    {
+        padding: 5.5rem 0 5rem;
+        border-bottom: 1.5px solid #e5e6e5;
+        .container
+        {
+            >h2
+            {
+                margin: 0 16rem 2.3125rem;
+                text-align: center;
+                text-transform: capitalize;
+            }
+            >p  
+            {
+                margin: 0 13rem 1.875rem;
+                text-align: center;
+            }
+            .faq-accordion
+            {
+                margin: 2.5rem 6.875rem 0;
+                .faq-content
+                {
+                    padding: 1rem 2.5rem 1rem;
+                    margin-bottom: 1.1rem;
+                    background-color: #f5f7fa;
+                    color: #fff !important;
+                    h3
+                    {
+                        font-size: 18px;
+                        cursor: pointer;
+                        margin: 0;
+                        &::after
+                        {
+                            font-style: normal;
+                            color: $color-hover;
+                            float: right;
+                            content: "\f068";
+                            font-family: "Line Awesome Free";
+                            font-weight: 900;
+                            font-size: 1.5rem;
+                            transition:all 0.5s ease;
+                        }
+                        &.collapsed::after
+                        {
+                            content: "\f067";
+                        }
+                      }
+                    p
+                    {
+                        font-size: 15px;
+                        margin: 0;
+                        text-align: justify;
+                        transition: .7s ease;
+                    }
+                }
+            }
+        }
+    }
+// _____________________________________________________________Download-section_________________________________________________
+    .download-section
+    {
+        padding: 7.5rem 0 7.8rem;
+        background: url('../img/download-img.png') no-repeat top .8rem right;
+        background-size: 62%;
+        .col-6:first-child
+        {
+            h2
+            {
+                margin: 0 4.5rem 1.3125rem 0rem;
+                text-transform: capitalize;
+            }
+            p  
+            {
+                margin: 0 1.53rem 1.875rem 0;
+            }
+            img
+            {
+                max-width: 100%;
+                margin-right: 1rem;
+            }
+        }
+        .col-6:last-child
+        {
+            img
+            {
+                display: none
+            }
+        }
+        
+    }
+// ____________________________________________________________site-footer________________________________________________________
+    .site-footer
+    {
+        padding: 7.5rem 0 0rem;
+        background: #09142e;
+        text-align: center;
+        .footer-block
+        {
+            >a
+            {
+                font-family: 'Poppins';
+                font-size: 30px;
+                color: $color-header !important;
+                text-transform: capitalize;
+                display: block;
+                margin: 0 25rem 2.6875rem;
+                >span{
+                    color: #fff;
+                }
+            }
+            ul
+            {
+                margin: 0rem 0 2.678rem;
+                padding: 0;
+                li
+                {
+                    list-style-type: none;
+                    display: inline-block;
+                    margin: 0 1.0625rem 0 0;
+                    a
+                    {
+                        color: #fff;
+                        text-transform: capitalize;
+                        font-family: 'Poppins-regular';
+                    }
+                }
+            }
+            
+        }
+        .social-media
+        {
+            >span
+            {
+                margin: 0 .1rem 1.6875rem;
+                &:hover{
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+        .site-info
+        {
+            border-top: 1px solid hsla(0,0%,100%,.1);
+            margin: 4.25rem 0 0;
+            padding: 1.5625rem 0;
+            p
+            {
+                margin: 0;
+                padding: 0;
+                font-size: .875rem;
+                a
+                {
+                    color: #fff;
+                    font-family: 'Poppins-semibold';
+                }
+            }
+        }
+    }
+
+    
